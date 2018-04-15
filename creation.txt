@@ -1,0 +1,94 @@
+  Schema::create('gardiens', function (Blueprint $table) {
+            $table->increments('id_G');
+            $table->string('Nom_G');
+            $table->string('Prenom_G');
+            $table->string('cin');
+            $table->string('Num_tel_G');
+            $table->string('Salaire_G');
+            $table->string('NbHeure_G');
+            $table->string('TempsHoraire_G');
+            $table->string('NU_G');
+            $table->string('Mdp_G');
+            $table->timestamps('timecreation');
+        });
+		
+		
+  Schema::create('utilisateurs', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('Nom_Ut');
+            $table->string('Prenom_Ut');
+            $table->string('NumTel_Ut');
+            $table->string('NU_Ut');
+            $table->string('Mdp_Ut');
+            $table->string('Email_Ut');
+            $table->string('Solde_Ut');
+            $table->timestamps('timecreation');
+
+        });
+
+   Schema::create('voitures', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('Matricule');
+            $table->string('Matricule');
+            $table->string('Marque');
+            $table->string('couleur');
+            $table->timestamps('timecreation');
+        });
+
+   Schema::create('reservations', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('mode_paiement');
+            $table->string('montant_payer');
+            $table->string('Surplus');
+            $table->string('date_deb');
+            $table->string('date_fin');
+            $table->string('heure_deb');
+            $table->string('heure_fin');
+            $table->timestamps('timecreation');
+        });
+		
+ Schema::create('places', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('code_Place');
+            $table->timestamps('timecreation');
+
+        });
+		
+     Schema::create('parkings', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('Nom_Parking');
+            $table->string('capacite');
+            $table->integer('Avis');
+            $table->string('Rue');
+            $table->string('Ville');
+            $table->string('Pays');
+            $table->string('Code_Postale');
+            $table->timestamps('timecreation');
+
+
+      });
+	  
+  Schema::create('Responsable', function (Blueprint $table) {
+            $table->increments('id_R');
+            $table->string('Nom_R');
+            $table->string('Prenom_R');
+            $table->string('Numtel_R');
+            $table->string('Email_R');
+            $table->string('NU_R');
+            $table->string('Mdp_R');
+            $table->string('paiement_Ut');
+            $table->timestamps('timecreation');
+
+        });
+		
+		
+		
+  Schema::create('Administration', function (Blueprint $table) {
+            $table->increments('id_ad');
+            $table->string('Nom_ad');
+            $table->string('Prenom_ad');
+            $table->string('NU_ad');
+            $table->string('Mdp_ad');
+            $table->timestamps('timecreation');
+
+        });
